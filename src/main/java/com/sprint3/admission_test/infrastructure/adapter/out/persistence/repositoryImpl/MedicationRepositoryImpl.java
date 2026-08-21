@@ -15,6 +15,11 @@ public class MedicationRepositoryImpl implements IMedicationRepository {
     private MedicationJpaRepository medicationJpaRepository;
 
     @Override
+    public Medication save(Medication medication) {
+        return medicationJpaRepository.save(medication);
+    }
+
+    @Override
     public Optional<Medication> findById(Long id) {
         return medicationJpaRepository.findById(id);
     }
